@@ -1,13 +1,21 @@
 package com;
 
+
 class Node{
 	int data;
 	Node next;
+	
+	public Node(int data,Node node) {
+		this.data = data;
+		this.next = node;
+	}	
 	public Node(int data) {
 		this.data = data;
 		this.next = null;
-	}		
+	}	
+	
 }
+
 class LinkedList {
 	
 	Node head;
@@ -25,9 +33,7 @@ class LinkedList {
 	}
 	
 	public void add(int x){
-		Node temp=new Node(x);
-		temp.next=this.head;
-		this.head=temp;		
+		this.head=new Node(x,this.head);	
 	}
 }
 
