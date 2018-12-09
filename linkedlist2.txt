@@ -12,31 +12,37 @@ class LinkedList {
 	
 	Node head;
 	
-	public Node search(LinkedList list,int x){
-		Node node = list.head;
+	public LinkedList() {
+		this.head = null;
+	}
+
+	public Node search(int x){
+		Node node = this.head;
 		while(node!=null && node.data!=x){
 			node=node.next;
 		}		
 		return node;
 	}
-
-	public static void main(String[] args) {
-		LinkedList list=new LinkedList();
-		
-		Node node1 = new Node(5);
-		Node node2 = new Node(15);
-		Node node3 = new Node(52);
-		Node node4 = new Node(17);
-		Node node5 = new Node(29);
-		
-		list.head=node1;
-		node1.next=node2;
-		node2.next=node3;
-		node3.next=node4;
-		node4.next=node5;
-		
-		Node node_result=list.search(list,52); //returns null while input key to search is not present.
-		System.out.println(node_result.data);
+	
+	public void add(int x){
+		Node temp=new Node(x);
+		temp.next=this.head;
+		this.head=temp;		
 	}
+}
 
+
+class Test{
+  public static void main(String[] args) {
+	LinkedList list=new LinkedList();
+	
+	list.add(5);
+	list.add(45);
+	list.add(55);
+	list.add(8);
+	list.add(52);
+	
+	Node node_result=list.search(5); //returns null while input key to search is not present.
+	System.out.println(node_result);
+  }
 }
