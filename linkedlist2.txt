@@ -43,6 +43,6 @@ class Test{
 	list.add(52);
 	
 	Node node_result=list.search(5); //returns null while input key to search is not present.
-	System.out.println(node_result);
+	
   }
 }
